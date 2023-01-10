@@ -32,6 +32,24 @@ $(document).ready(() => {
 
   if (currentDate === dobDay && currentMonth === dobMonth) {
     console.log("Happy birthday")
+    fetch("https://type.fit/api/quotes").then((res) => {
+      return res.json()
+    }).then((res) => {
+      console.log(firstName)
+      
+      const randomQuoteNum = Math.floor(Math.random()* res.length)
+      const randomQuote = res[randomQuoteNum]
+      const quote = randomQuote.text
+      const author = randomQuote.author
+      console.log(author)
+
+      $(".container").append(`<h1 class="text-center my-5">Happy Birthday  ${firstName[0].toUpperCase()+firstName.slice(1)} !!!</h1>
+      <p class="text-center"> "${quote}" </p>
+      <p class="text-center">${author} </p> `)
+
+
+
+    })
   }
   else {
     console.log("your birthday is after ")
