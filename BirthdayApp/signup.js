@@ -1,4 +1,4 @@
-import {auth,createUserWithEmailAndPassword} from "./firebase.js";
+import {auth,createUserWithEmailAndPassword,db,set,ref} from "./firebase.js";
 
 $(document).ready(() => {
 
@@ -17,13 +17,27 @@ $(document).ready(() => {
      console.log(email)
      console.log(password)
  
- 
+    const userData = {
+      firstName: firstName,
+      lastName: lastName,
+      dob: dob,
+      email: email,
+      password:password
+ }
  
 
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user)
+    const userId = user.uid
+    // save to db
+    set(ref(db, 'users/' + userId), userData)
+      .then(() => {
+        // pass firstname to another page (birthday.html) usig local storage
+        localStorage.setItem('name',firstName)
+      window.location.href ='birthday.html'
+    })
   })
   .catch((error) => {
     const errorCode = error.code;
