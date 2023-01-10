@@ -14,16 +14,18 @@ $(document).ready(() => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log(user)
       const dbRef = ref(db);
-      const  userId = user.uid
+      const userId = user.uid
+      
       get(child(dbRef, `users/${userId}`)).then((snapshot) => {
         if (snapshot.exists()) {
+          console.log(snapshot)
           console.log(snapshot.val());
           console.log(snapshot.val().firstName)
 
-localStorage.setItem('firstName' ,snapshot.val().firstName)
-      window.location.href = 'birthday.html'
+          localStorage.setItem('firstName', snapshot.val().firstName)
+          localStorage.setItem('dob',snapshot.val().dob)
+          window.location.href = 'birthday.html'
 
         } else {
           console.log("No data available");
