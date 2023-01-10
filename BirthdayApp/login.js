@@ -15,6 +15,7 @@ $(document).ready(() => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log(user)
+      window.location.href = 'birthday.html'
     })
     .catch((error) => {
       const errorCode = error.code;
