@@ -36,7 +36,9 @@ createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
 
         // pass firstname to another page (birthday.html) usig local storage
-      localStorage.setItem('firstName',firstName)
+        localStorage.setItem('firstName', firstName)
+        localStorage.setItem('dob',dob)
+
       window.location.href ='birthday.html'
     })
   })
