@@ -1,5 +1,5 @@
 body{
-  /* background-color: rgb(239, 71, 111); */
+  background-color: #fcf6bd;
   font-family: sans-serif;
   /* fcf6bd */
 }
@@ -33,10 +33,25 @@ body{
 #login-btn:hover{
   background-color:#e90a72;
   color:white;
-  
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 #link:hover{
 color:#e90a72
+}
+
+#logout-btn{
+  background-color: #fcf6bd;
+  color:#e90a72;
+  font-weight: bold;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  border: 2px solid #e90a72
+}
+#logout-btn:hover{
+  background-color:#e90a72;
+  color: #fcf6bd;
+  border: 2px solid #fcf6bd;
+box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .article-container{
   /* background-color: rgba(239, 71, 111,0.5); */
@@ -48,4 +63,26 @@ color:#e90a72
   font-family: Garamond , sans-serif;
   /* margin:0 100px; */
   
+}
+
+#greeting{
+  text-transform: uppercase;
+  color:#ff0054;
+ font-size: 40px;
+ letter-spacing: 0.1em;
+
+}
+#days-left{
+  text-transform: uppercase;
+  color:#ff0054;
+ font-size: 48px;
+ letter-spacing: 0.1em;
+}
+
+#msg{
+  text-transform: uppercase;
+  color:#ff0054;
+ font-size: 24px;
+ letter-spacing: 0.1em;
+ font-weight: bold;
 }

@@ -38,10 +38,10 @@ $(document).ready(() => {
       const author = randomQuote.author
       console.log(author)
 
-      $(".container").append(`<h1 class="text-center mt-5">Happy Birthday  ${firstName[0].toUpperCase() + firstName.slice(1)} !!!</h1>
-      <p class="text-center">🎊🎂🎊</p>
-      <p class="text-center"> "${quote}" </p>
-      <p class="text-center">${author} </p> `)
+      $(".container").append(`<h1 class="text-center mt-5" id="bday-name">Happy Birthday, ${firstName[0].toUpperCase() + firstName.slice(1)} !!!</h1>
+      <p class="text-center" id="icons">🎊🎂🎊</p>
+      <p class="text-center" id="quote"> "${quote}" </p>
+      <p class="text-center" id="author">${author} </p> `)
   setInterval(() => {
       
         const jsConfetti = new JSConfetti()
@@ -90,9 +90,9 @@ $(document).ready(() => {
       
     );
     console.log( remainingDays)
-    $(".container").append(`<h1 class="text-center my-5">Hey ${firstName[0].toUpperCase()+firstName.slice(1)} !!!</h1>
-    <p class="text-center"> ${remainingDays} Days Left </p>
-    <p class="text-center">until your birthday </p> `)
+    $(".container").append(`<h1 class="text-center mt-5" id="greeting">Hey ${firstName[0].toUpperCase()+firstName.slice(1)}!!! 👋</h1>
+    <p class="text-center mt-4" id="days-left"> ${remainingDays} Days Left </p>
+    <p class="text-center mt-3" id="msg">until your birthday </p> `)
   }
 
   $('button').on('click', () => {
