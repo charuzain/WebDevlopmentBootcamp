@@ -35,13 +35,12 @@ $(document).ready(() => {
       });
 
 
-      // window.location.href = 'birthday.html'
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage)
-      
+
     });
   
 
