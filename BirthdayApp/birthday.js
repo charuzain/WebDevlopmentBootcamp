@@ -39,9 +39,9 @@ $(document).ready(() => {
       console.log(author)
 
       $(".container").append(`<h1 class="text-center mt-5" id="bday-name">Happy Birthday, ${firstName[0].toUpperCase() + firstName.slice(1)} !!!</h1>
-      <p class="text-center" id="icons">🎊🎂🎊</p>
-      <p class="text-center" id="quote"> "${quote}" </p>
-      <p class="text-center" id="author">${author} </p> `)
+      <h2 class="text-center mt-3" id="icons">🎊🎊🎊🎂🎂🎊🎊🎊</h2>
+      <p class="text-center mt-4" id="quote"> "${quote}" </p>
+      <p class="text-center mt-4" id="author">${author} </p> `)
   setInterval(() => {
       
         const jsConfetti = new JSConfetti()
