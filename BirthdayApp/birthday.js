@@ -1,11 +1,12 @@
-import {auth, signOut} from "./firebase.js";
+import { auth, signOut } from "./firebase.js";
+// import JSConfetti from 'js-confetti'
+
+
 $(document).ready(() => {
 
-  // y /m/date
   let firstName = localStorage.getItem('firstName')
   let dob = localStorage.getItem('dob')
-  // console.log(firstName)
-  console.log(dob) // y / m/date
+  console.log(dob)
   const dobDate = dob.split("-")
   console.log(dobDate)
 
@@ -13,9 +14,6 @@ $(document).ready(() => {
   const dobDay = Number(dobDate[2])
   const dobMonth = Number(dobDate[1])
   const dobYear = Number(dobDate[0])
-  // console.log( dobDay)
-  // console.log(dobMonth)
-  // console.log(dobYear)
 
 
   $('h3').append(", " + firstName[0].toUpperCase() + firstName.slice(1))
@@ -25,10 +23,7 @@ $(document).ready(() => {
   const currentDate = todayDate.getDate()
   const currentMonth = todayDate.getMonth() + 1
   const currentYear = todayDate.getFullYear()
-  // console.log(typeof dobDay)
-  // console.log(currentDate)
-  // console.log(dobMonth)
-  // console.log( currentMonth)
+
 
   if (currentDate === dobDay && currentMonth === dobMonth) {
     console.log("Happy birthday")
@@ -43,9 +38,28 @@ $(document).ready(() => {
       const author = randomQuote.author
       console.log(author)
 
-      $(".container").append(`<h1 class="text-center my-5">Happy Birthday  ${firstName[0].toUpperCase()+firstName.slice(1)} !!!</h1>
+      $(".container").append(`<h1 class="text-center mt-5">Happy Birthday  ${firstName[0].toUpperCase() + firstName.slice(1)} !!!</h1>
+      <p class="text-center">🎊🎂🎊</p>
       <p class="text-center"> "${quote}" </p>
       <p class="text-center">${author} </p> `)
+  setInterval(() => {
+      
+        const jsConfetti = new JSConfetti()
+        jsConfetti.addConfetti({
+          
+          // emojis: ["🎊","🎈"],
+          confettiRadius: 7,
+          confettiNumber: 500,
+        })
+      }, 2000)
+      // const jsConfetti = new JSConfetti()
+      // jsConfetti.addConfetti({
+        
+      //   // emojis: ["🎊","🎈"],
+      //   confettiRadius: 7,
+      //   confettiNumber: 5500,
+      // })
+
 
 
 
@@ -79,49 +93,12 @@ $(document).ready(() => {
     $(".container").append(`<h1 class="text-center my-5">Hey ${firstName[0].toUpperCase()+firstName.slice(1)} !!!</h1>
     <p class="text-center"> ${remainingDays} Days Left </p>
     <p class="text-center">until your birthday </p> `)
-    
-
-    // var one_day=1000*60*60*24;
-    // console.log(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
-    // " days left until Christmas!");
-
-
-
-    // console.log(nextBirthday)
-    // console.log(today)
-
-    // const second = 1000
-    // const min = second * 60
-    // const hour = min * 60
-    // const day = hour * 24
-
-    // const timestamp = nextBirthday - today
-    // console.log(timestamp)
-    // // const d = Date.now()
-    // const days = Math.floor(timestamp / day)
-    // const hours = Math.floor((timestamp % days) /hour)
-    // console.log(days)
-    // console.log(hours)
-
-
-
-
-
-// dob 
-// current date
-
-    
-    
-
-
   }
-
-
-
 
   $('button').on('click', () => {
     signOut(auth).then(() => {
       localStorage.removeItem('firstName')
+      // localStorage.removeItem('dob')
       window.location.href = 'index.html'
     }).catch((error) => {
      console.log(error)

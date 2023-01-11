@@ -12,8 +12,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
-<body>
-  <div class="container-lg mt-5">
+<body class="login-body">
+  <nav class="navbar d-flex justify-content-center ">
+      <h3 class="text-center mx-5">Days To BirthDay </h3>
+  </nav>
+  <div class="container-lg mt-5 login">
     <div class="text-center">
       <h1>Login</h1>
     </div>
@@ -33,13 +36,13 @@
               <input type="password" class="form-control" id="password" name="password" required>
             </div>
 
-              <div class="mb-3">
+              <div class="my-5">
               <div class="my-4 text-center submit">
-                <button type="submit" class="btn btn-secondary">Log In</button>
+                <button type="submit" class="btn" id="login-btn">Log In</button>
               </div>
             </div>
             <div class="mb-3 text-center">
-              Need an account?<a href="./signup.html">SIGN UP</a>
+              Need an account ?<a href="./signup.html" id="link" >SIGN UP</a>
               </div>
 
         </form>

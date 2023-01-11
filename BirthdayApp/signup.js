@@ -3,12 +3,11 @@ import {auth,createUserWithEmailAndPassword,db,set,ref} from "./firebase.js";
 $(document).ready(() => {
 
 const formatYmd = date => date.toISOString().slice(0, 10);
-// Parameters date is a Date object.
 
 
   const date = formatYmd(new Date()); 
   console.log( date)
-  $('#date').attr("max",date)
+  $('#dob').attr("max",date)
 
   
   $('button').on("click", (e) => {
