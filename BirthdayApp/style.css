@@ -1,0 +1,22 @@
+body{
+  background-color: #ef476f;
+  font-family: sans-serif;
+  /* fcf6bd */
+}
+.navbar{
+  background-color: #a9def9;
+  height:10vh;
+  font-family: Garamond , sans-serif
+
+
+}
+
+.article-container{
+  height:70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Garamond , sans-serif
+  /* margin:0 100px; */
+  
+}
