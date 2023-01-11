@@ -89,10 +89,18 @@ $(document).ready(() => {
       (dayInMilliseconds)
       
     );
-    console.log( remainingDays)
-    $(".container").append(`<h1 class="text-center mt-5" id="greeting">Hey ${firstName[0].toUpperCase()+firstName.slice(1)}!!! 👋</h1>
+    console.log(remainingDays)
+    if (remainingDays === 1) {
+      $(".container").append(`<h1 class="text-center mt-5" id="greeting">Hey ${firstName[0].toUpperCase() + firstName.slice(1)}!!! 👋</h1>
+      <p class="text-center mt-4" id="days-left"> ${remainingDays} Day Left </p>
+      <p class="text-center mt-3" id="msg">until your birthday </p> `)
+    }
+    else {
+
+      $(".container").append(`<h1 class="text-center mt-5" id="greeting">Hey ${firstName[0].toUpperCase() + firstName.slice(1)}!!! 👋</h1>
     <p class="text-center mt-4" id="days-left"> ${remainingDays} Days Left </p>
     <p class="text-center mt-3" id="msg">until your birthday </p> `)
+    }
   }
 
   $('button').on('click', () => {
