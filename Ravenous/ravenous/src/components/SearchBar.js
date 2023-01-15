@@ -1,6 +1,6 @@
 
 import React from 'react'
-import './SearchBar/SearchBar.css'
+import './SearchBar.css'
 
 const sortByOptions = {
   'Best Match': 'best_match',
